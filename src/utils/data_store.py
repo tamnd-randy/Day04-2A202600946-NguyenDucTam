@@ -254,7 +254,7 @@ class OrderDataStore:
             separators=(",", ":"),
         )
         order_id = "ORD-" + hashlib.sha1(seed_payload.encode("utf-8")).hexdigest()[:10].upper()
-        relative_path = Path("artifacts") / "orders" / f"{order_id}.json"
+        relative_path = f"artifacts/orders/{order_id}.json"
         absolute_path = self.output_dir / f"{order_id}.json"
 
         payload = {
